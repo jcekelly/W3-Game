@@ -16,7 +16,7 @@ class Obstacle {
         this.height = 40
         this.widthPlus = 80
         this.heightPlus = 80
-        this.nebulaSpeed = -3
+        this.nebulaSpeed = -1
         this.greenSpeed = -3
         this.phantomSpeed = -3
         this.vortexSpeed = -3
@@ -41,34 +41,34 @@ class Obstacle {
        
         
         if (this.nebulaY < 5){
-            this.nebulaSpeed = random(1,10);
+            this.nebulaSpeed = random(3,10);
         } else if (this.nebulaY > 479){
-            this.nebulaSpeed = random(-10,-1);
+            this.nebulaSpeed = random(-10,-3);
         }
 
         if (this.greenY < 5){
-            this.greenSpeed = random(1,10);
+            this.greenSpeed = random(3,10);
         } else if (this.greenY > 479){
-            this.greenSpeed = random(-10,1);
+            this.greenSpeed = random(-10,-3);
         }
 
         if (this.phantomY < 5){
-            this.phantomSpeed = random(1,10);
+            this.phantomSpeed = random(3,10);
         } else if (this.phantomY > 479){
-            this.phantomSpeed = random(-10,-1)
+            this.phantomSpeed = random(-10,-3)
         }
 
 
         if (this.vortexY < 5){
-            this.vortexSpeed = random(1,10);
+            this.vortexSpeed = random(3,10);
         } else if (this.vortexY > 479){
-            this.vortexSpeed = random(-10,-1)
+            this.vortexSpeed = random(-10,-3)
         }
 
         if (this.sunburstY < 5){
-            this.sunburstSpeed = random(1,10);
+            this.sunburstSpeed = random(3,10);
         } else if (this.sunburstY > 479){
-            this.sunburstSpeed = random(-10,-1)
+            this.sunburstSpeed = random(-10,-3)
         }
 
 
@@ -79,33 +79,32 @@ class Obstacle {
         this.sunburstY = this.sunburstY + this.sunburstSpeed
 
 
+       if(dist(this.nebulaX,this.nebulaY,player.x,player.y) < 40){
+           console.log('nebula collision')
+           player.resetPlayerLoss();
+       } 
 
-       
+       if(dist(this.greenX,this.greenY,player.x,player.y) < 40){
+        console.log('green collision')
+        player.resetPlayerLoss();
+        }
+
+       if(dist(this.phantomX,this.phantomY,player.x,player.y) < 40){
+        console.log('phantom collision')
+        player.resetPlayerLoss();
+        }
+
+        if(dist(this.vortexX,this.vortexY,player.x,player.y) < 40){
+            console.log('vortex collision')
+            player.resetPlayerLoss();
+        }
+
+        if(dist(this.sunburstX,this.sunburstY,player.x,player.y) < 40){
+            console.log('sunburst collision')
+            player.resetPlayerLoss();
+        }
 
 
 }
 }
 
-// TO DO LIST 
-// add new obstacles
-// add collision
-// add planet/base
-// Add lose / win scenario 
-// add Music ? 
-
-
-
-
-
-// to add new obstcle 
-// - add preload 
-// - add draw 
-// - give it X,Y,Speed 
-// - give it conditional + speed stuff 
-
-
-
-// WIN/LOSE
-// deliver to end point = + 1 point 
-// hit by obstacle = reset to start point 
-// after delivery, go back to

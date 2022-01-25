@@ -44,4 +44,18 @@ class Player {
         this.y +=8
       }
 
-}
+      resetPlayerLoss(){
+          this.x = 0;
+          this.y = 250;
+          const lossCount = document.getElementById('losses').value -- 
+        }
+
+        resetPlayerWin(){
+            this.x = 0;
+            this.y = 0;
+            const winCount = document.getElementById('Wins').value ++
+        }
+    }
+      
+
+

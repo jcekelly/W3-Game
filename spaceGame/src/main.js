@@ -27,4 +27,10 @@ startEnd.draw()
 
 
 
-
+// - win counter
+// - add Lose function 
+// - loss counter 
+// - style the counters 
+// - obstacle redraw when player reset 
+// - improve planet and staion sprites / postion 
+// - add music 
