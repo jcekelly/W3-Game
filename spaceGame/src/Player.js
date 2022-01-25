@@ -25,9 +25,10 @@ class Player {
           this.x = constrain(this.x,0,720)
           this.y = constrain(this.y,0,460)
 
-        //   if (this.x > 580){
-        //       location.reload();
-        //   }
+          let remainingLives = document.getElementById('losses').value
+          if(remainingLives <= '0'){
+              gameOver();
+          }
           
     }
 
@@ -44,17 +45,8 @@ class Player {
         this.y +=8
       }
 
-      resetPlayerLoss(){
-          this.x = 0;
-          this.y = 250;
-          const lossCount = document.getElementById('losses').value -- 
-        }
+      
 
-        resetPlayerWin(){
-            this.x = 0;
-            this.y = 0;
-            const winCount = document.getElementById('Wins').value ++
-        }
     }
       
 

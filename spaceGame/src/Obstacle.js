@@ -7,9 +7,9 @@ class Obstacle {
         this.greenX = (Math.random() * 560)+100
         this.greenY = 480
         this.phantomX = (Math.random() * 560)+100
-        this.phantomY = 480
+        this.phantomY = 0
         this.vortexX = (Math.random() * 560)+100
-        this.vortexY = 480
+        this.vortexY = 0
         this.sunburstX = (Math.random() * 560)+100
         this.sunburstY = 480 
         this.width = 40
@@ -81,30 +81,35 @@ class Obstacle {
 
        if(dist(this.nebulaX,this.nebulaY,player.x,player.y) < 40){
            console.log('nebula collision')
-           player.resetPlayerLoss();
+           resetPlayerLoss();
        } 
 
        if(dist(this.greenX,this.greenY,player.x,player.y) < 40){
         console.log('green collision')
-        player.resetPlayerLoss();
+        resetPlayerLoss();
         }
 
        if(dist(this.phantomX,this.phantomY,player.x,player.y) < 40){
         console.log('phantom collision')
-        player.resetPlayerLoss();
+        resetPlayerLoss();
         }
 
         if(dist(this.vortexX,this.vortexY,player.x,player.y) < 40){
             console.log('vortex collision')
-            player.resetPlayerLoss();
+            resetPlayerLoss();
         }
 
         if(dist(this.sunburstX,this.sunburstY,player.x,player.y) < 40){
             console.log('sunburst collision')
-            player.resetPlayerLoss();
+            resetPlayerLoss();
         }
+
+        
 
 
 }
+
+     
+
 }
 
