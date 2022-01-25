@@ -1,54 +1,111 @@
 class Obstacle {
     
+   
     constructor(){
-        this.nebulaX = 800
-        this.nebulaY = (Math.random() * 500) 
-        this.greenX = 800
-        this.greenY = (Math.random() * 500)
-        this.phantomX = 800
-        this.phantomY = (Math.random() * 500)
+        this.nebulaX = (Math.random() * 560)+100
+        this.nebulaY = 480
+        this.greenX = (Math.random() * 560)+100
+        this.greenY = 480
+        this.phantomX = (Math.random() * 560)+100
+        this.phantomY = 480
+        this.vortexX = (Math.random() * 560)+100
+        this.vortexY = 480
+        this.sunburstX = (Math.random() * 560)+100
+        this.sunburstY = 480 
+        this.width = 40
+        this.height = 40
+        this.widthPlus = 80
+        this.heightPlus = 80
+        this.nebulaSpeed = -3
+        this.greenSpeed = -3
+        this.phantomSpeed = -3
+        this.vortexSpeed = -3
+        this.sunburstSpeed = -3
     }
 
     preload(){
         this.obstacleImageNebula = loadImage('../assets/nebula-sprite.gif')
         this.obstacleImageGreen = loadImage('../assets/green-sprite.gif')
         this.obstacleImagePhantom = loadImage('../assets/phantom sprite.gif')
+        this.obstacleImageVortex = loadImage('../assets/vortex.gif')
+        this.obstacleImageSunburst = loadImage('../assets/sunburst.gif')
     
     }
     draw(){
-        obstacleArray
-        image(this.obstacleImageNebula,this.nebulaX,this.nebulaY,40,40)
-        image(this.obstacleImageGreen,this.greenX,this.greenY,40,40)
-        image(this.obstacleImagePhantom,this.phantomX,this.phantomY,80,80)
+        image(this.obstacleImageNebula,this.nebulaX,this.nebulaY,this.widthPlus,this.heightPlus)
+        image(this.obstacleImageGreen,this.greenX,this.greenY,this.widthPlus,this.heightPlus)
+        image(this.obstacleImagePhantom,this.phantomX,this.phantomY,this.widthPlus,this.heightPlus)
+        image(this.obstacleImageVortex,this.vortexX,this.vortexY,this.widthPlus,this.heightPlus)
+        image(this.obstacleImageSunburst,this.sunburstX,this.sunburstY,this.widthPlus,this.heightPlus)
 
-        this.nebulaX = this.nebulaX - 5
-        this.greenX = this.greenX - 5
-        this.phantomX = this.phantomX - 5
-
-
-        if (frameCount % 60 === 0){
-            obstacleArray.push(new Obstacle)
-            console.log(obstacleArray)
-         }
+       
         
+        if (this.nebulaY < 5){
+            this.nebulaSpeed = random(1,10);
+        } else if (this.nebulaY > 479){
+            this.nebulaSpeed = random(-10,-1);
+        }
 
-        // if (this.nebulaX < 400){
-        //     this.nebulaX = 800, this.nebulaY = (Math.random() * 500) 
-        // }
-        // if (this.greenX < 400){
-        //     this.greenX = 800, this.greenY = (Math.random() * 500) 
-        // }
-        // if (this.phantomX < 400){
-        //     this.phantomX = 800, this.phantomY = (Math.random() * 500) 
-        // }
+        if (this.greenY < 5){
+            this.greenSpeed = random(1,10);
+        } else if (this.greenY > 479){
+            this.greenSpeed = random(-10,1);
+        }
 
-    
+        if (this.phantomY < 5){
+            this.phantomSpeed = random(1,10);
+        } else if (this.phantomY > 479){
+            this.phantomSpeed = random(-10,-1)
+        }
+
+
+        if (this.vortexY < 5){
+            this.vortexSpeed = random(1,10);
+        } else if (this.vortexY > 479){
+            this.vortexSpeed = random(-10,-1)
+        }
+
+        if (this.sunburstY < 5){
+            this.sunburstSpeed = random(1,10);
+        } else if (this.sunburstY > 479){
+            this.sunburstSpeed = random(-10,-1)
+        }
+
+
+        this.nebulaY = this.nebulaY + this.nebulaSpeed
+        this.greenY = this.greenY + this.greenSpeed
+        this.phantomY = this.phantomY + this.phantomSpeed
+        this.vortexY = this.vortexY + this.vortexSpeed
+        this.sunburstY = this.sunburstY + this.sunburstSpeed
+
+
+
+       
+
 
 }
 }
 
 // TO DO LIST 
-// Create new obstacles in a loop 
-// add collision 
+// add new obstacles
+// add collision
+// add planet/base
 // Add lose / win scenario 
 // add Music ? 
+
+
+
+
+
+// to add new obstcle 
+// - add preload 
+// - add draw 
+// - give it X,Y,Speed 
+// - give it conditional + speed stuff 
+
+
+
+// WIN/LOSE
+// deliver to end point = + 1 point 
+// hit by obstacle = reset to start point 
+// after delivery, go back to

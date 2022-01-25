@@ -1,13 +1,15 @@
 
 const background = new Background()
 const player = new Player()
-const obstacle = new Obstacle
-const obstacleArray = []
+const obstacle = new Obstacle()
+const startEnd = new StartEnd()
+
 
 function preload (){
 background.preload()
 player.preload()
 obstacle.preload()
+startEnd.preload()
 }
 
 function setup (){
@@ -20,6 +22,7 @@ function draw (){
 background.draw()
 player.draw()
 obstacle.draw()
+startEnd.draw()
 }
 
 

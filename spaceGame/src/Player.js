@@ -1,7 +1,7 @@
 class Player {
 
     constructor(){
-        this.x = 300 
+        this.x = 0 
         this.y = 250
     }
 
@@ -22,13 +22,17 @@ class Player {
             this.moveUp()
           } 
           
-          this.x = constrain(this.x,0,700)
+          this.x = constrain(this.x,0,720)
           this.y = constrain(this.y,0,460)
+
+        //   if (this.x > 580){
+        //       location.reload();
+        //   }
           
     }
 
     moveRight(){
-        this.x +=8
+        this.x +=10
       }
       moveLeft(){
         this.x -=8
