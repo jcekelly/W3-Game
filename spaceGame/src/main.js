@@ -10,11 +10,14 @@ background.preload()
 player.preload()
 obstacle.preload()
 startEnd.preload()
+loadFont('../assets/VCR_OSD_MONO_1.001.ttf')
 }
 
 function setup (){
     createCanvas(800, 600);
     frameRate(60);
+    // textFont(VCR OSD Mono);
+    textAlign(CENTER,CENTER);
 }
 
 function draw (){
@@ -23,6 +26,7 @@ background.draw()
 player.draw()
 obstacle.draw()
 startEnd.draw()
+// text('GAME OVER', 400, 400)
 }
 
 function resetPlayerLoss(){
@@ -59,13 +63,19 @@ function resetPlayerWin(){
 
 
 function gameOver(){
-    location.reload();
+    console.log('GAME OVER');
+}
+
+function keyPressed(){
+    if (keyCode === 32){
+        player.boost()
+    }
 }
 
 
-// - add GAME OVER event for then loss counter = 0 
+// - add GAME OVER screen rather than just refresh 
 // - style the counters 
-// - obstacle redraw when player reset 
-// - improve planet and staion sprites / postion
-// - try out diff backgrounds  
+// - instructions ?
+// - add increasing difficulty 
+// - improve planet and station sprites / postion
 // - add music 

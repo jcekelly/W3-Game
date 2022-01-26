@@ -5,5 +5,6 @@ class Background {
     }
    draw (){
        image(this.backgroundImage,0,0, 800, 530)
+       
    }
 }

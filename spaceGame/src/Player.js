@@ -20,7 +20,9 @@ class Player {
             this.moveDown()
           } else if (keyIsDown (38)){
             this.moveUp()
-          } 
+          } else if (keyIsDown(32)){
+              this.boost()
+          }
           
           this.x = constrain(this.x,0,720)
           this.y = constrain(this.y,0,460)
@@ -43,6 +45,10 @@ class Player {
       }
       moveDown(){
         this.y +=8
+      }
+
+      boost(){
+          this.x +=20
       }
 
       
