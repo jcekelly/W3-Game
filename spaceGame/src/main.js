@@ -10,14 +10,16 @@ background.preload()
 player.preload()
 obstacle.preload()
 startEnd.preload()
-loadFont('../assets/VCR_OSD_MONO_1.001.ttf')
+VCR = loadFont('../assets/VCR_OSD_MONO_1.001.ttf')
 }
 
 function setup (){
     createCanvas(800, 600);
     frameRate(60);
-    // textFont(VCR OSD Mono);
+    textFont(VCR);
     textAlign(CENTER,CENTER);
+    textSize(35);
+    fill('#FF6C00');
 }
 
 function draw (){
@@ -26,7 +28,6 @@ background.draw()
 player.draw()
 obstacle.draw()
 startEnd.draw()
-// text('GAME OVER', 400, 400)
 }
 
 function resetPlayerLoss(){
@@ -64,13 +65,19 @@ function resetPlayerWin(){
 
 function gameOver(){
     console.log('GAME OVER');
-}
-
-function keyPressed(){
-    if (keyCode === 32){
-        player.boost()
+    text('GAME OVER - press enter to play again', 400, 150);
+    if (keyCode === 13){
+        location.reload();
     }
-}
+    player.controls = false 
+
+    }
+
+
+
+
+
+
 
 
 // - add GAME OVER screen rather than just refresh 
@@ -78,4 +85,4 @@ function keyPressed(){
 // - instructions ?
 // - add increasing difficulty 
 // - improve planet and station sprites / postion
-// - add music 
+// - add musi

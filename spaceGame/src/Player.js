@@ -3,6 +3,7 @@ class Player {
     constructor(){
         this.x = 0 
         this.y = 250
+        this.controls = true
     }
 
     preload (){
@@ -12,6 +13,9 @@ class Player {
     draw (){
         image(this.playerImage,this.x,this.y,80,60)
 
+
+       if (this.controls === true){
+       
         if (keyIsDown(39)) {
             this.moveRight()
           } else if (keyIsDown (37)) {
@@ -23,6 +27,7 @@ class Player {
           } else if (keyIsDown(32)){
               this.boost()
           }
+        }
           
           this.x = constrain(this.x,0,720)
           this.y = constrain(this.y,0,460)
