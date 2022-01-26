@@ -79,6 +79,7 @@ class Obstacle {
         }
 
 
+       
         this.nebulaY = this.nebulaY + this.nebulaSpeed
         this.greenY = this.greenY + this.greenSpeed
         this.phantomY = this.phantomY + this.phantomSpeed
