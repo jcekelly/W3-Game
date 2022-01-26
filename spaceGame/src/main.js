@@ -11,17 +11,23 @@ player.preload()
 obstacle.preload()
 startEnd.preload()
 VCR = loadFont('../assets/VCR_OSD_MONO_1.001.ttf')
+soundtrack = loadSound('../assets/soundtrack.wav')
+player.noLivesLeft()
 }
 
 function setup (){
     createCanvas(800, 600);
     frameRate(60);
-    background.setup();
-    // textFont(VCR);
-    // textAlign(CENTER,CENTER);
-    // textSize(35);
-    // fill('#FF6C00');
+    textFont(VCR);
+    textAlign(CENTER,CENTER);
+    textSize(25);
+    fill('#FF6C00');
+    soundtrack.play();
+    soundtrack.setVolume(0.3)
 }
+
+
+
 
 function draw (){
     clear ()
@@ -44,7 +50,8 @@ function resetPlayerLoss(){
     obstacle.vortexX = (Math.random() * 560)+100
     obstacle.vortexY = 480
     obstacle.sunburstX = (Math.random() * 560)+100
-    obstacle.sunburstY = 0   
+    obstacle.sunburstY = 0
+    obstacle.collision.play()   
 }
 
 function resetPlayerWin(){
@@ -61,6 +68,7 @@ function resetPlayerWin(){
     obstacle.vortexY = 0
     obstacle.sunburstX = (Math.random() * 560)+100
     obstacle.sunburstY = 480 
+    startEnd.playerWin.play()
 }
 
 
@@ -72,7 +80,6 @@ function gameOver(){
     }
     player.controls = false
     obstacle.movement = false 
-
     }
 
 
@@ -81,10 +88,6 @@ function gameOver(){
 
 
 
-
-// - add GAME OVER screen rather than just refresh 
-// - style the counters 
-// - instructions ?
-// - add increasing difficulty 
+// - find better boost sound
+// - add game over sound that is triggered outside draw? 
 // - improve planet and station sprites / postion
-// - add musi

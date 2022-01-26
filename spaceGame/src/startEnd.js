@@ -10,6 +10,7 @@ class StartEnd {
     preload(){
         this.startPlanetImage = loadImage('../assets/base3n.png')
         this.endPlanetImage = loadImage ('../assets/Moon.gif')
+        this.playerWin = loadSound('../assets/planet.mp3')
     }
     draw (){
         image(this.startPlanetImage,this.startY,this.startX,50,50)

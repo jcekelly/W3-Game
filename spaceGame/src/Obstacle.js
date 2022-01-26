@@ -30,6 +30,10 @@ class Obstacle {
         this.obstacleImagePhantom = loadImage('../assets/phantom sprite.gif')
         this.obstacleImageVortex = loadImage('../assets/vortex.gif')
         this.obstacleImageSunburst = loadImage('../assets/sunburst.gif')
+        this.collision = loadSound('../assets/collision.wav')
+
+        
+
     
     }
     draw(){

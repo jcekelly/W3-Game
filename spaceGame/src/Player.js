@@ -10,6 +10,9 @@ class Player {
 
     preload (){
         this.playerImage = loadImage('../assets/surt6.png')
+        this.boosting = loadSound('../assets/boost.wav')
+        this.gameOver = loadSound('../assets/game-over.mp3')
+        this.gameOver.loop = false
     }
 
     draw (){
@@ -28,22 +31,30 @@ class Player {
             this.moveUp()
           } else if (keyIsDown(32)){
               this.boost()
+              this.boosting.play()
           }
         }
+
+        let remainingLives = document.getElementById('losses').value
+    if(remainingLives <= '0'){
+        gameOver();
+    }
           
           this.x = constrain(this.x,0,720)
           this.y = constrain(this.y,0,460)
 
-          let remainingLives = document.getElementById('losses').value
-          if(remainingLives <= '0'){
-              gameOver();
-          }
 
           if (this.x === 0){
               background.displayControls();
           }
           
     }
+
+   noLivesLeft(){
+    
+   }
+
+
 
     moveRight(){
         this.x +=10

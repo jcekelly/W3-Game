@@ -17,6 +17,13 @@ div {
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-top: 10px;
+  border-radius: 10px;
+  border-width: 3px;
+  border-color: #FF6C00;
+  border-style: dotted;
 
 }
 

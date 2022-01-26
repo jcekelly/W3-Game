@@ -8,12 +8,8 @@ class Background {
 
    }
 
-   setup(){
-    textFont(VCR);
-    textAlign(CENTER,CENTER);
-    textSize(20);
-    fill('#FF6C00');
-   }
+   
+   
 
    displayControls (){
     text('Arrow Keys to move. Space-bar to Boost',400,500)
