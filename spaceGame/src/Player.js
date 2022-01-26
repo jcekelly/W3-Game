@@ -10,9 +10,8 @@ class Player {
 
     preload (){
         this.playerImage = loadImage('../assets/surt6.png')
-        this.boosting = loadSound('../assets/boost.wav')
-        this.gameOver = loadSound('../assets/game-over.mp3')
-        this.gameOver.loop = false
+        this.boosting = loadSound('../assets/Randomize88.wav')
+        this.boosting.setVolume(0.3)
     }
 
     draw (){
@@ -50,9 +49,6 @@ class Player {
           
     }
 
-   noLivesLeft(){
-    
-   }
 
 
 

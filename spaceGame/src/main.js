@@ -11,9 +11,9 @@ player.preload()
 obstacle.preload()
 startEnd.preload()
 VCR = loadFont('../assets/VCR_OSD_MONO_1.001.ttf')
-soundtrack = loadSound('../assets/soundtrack.wav')
-player.noLivesLeft()
-}
+soundtrack = loadSound('../assets/soundtrackShort.wav')
+soundtrack.loop(true);}
+
 
 function setup (){
     createCanvas(800, 600);
@@ -23,7 +23,8 @@ function setup (){
     textSize(25);
     fill('#FF6C00');
     soundtrack.play();
-    soundtrack.setVolume(0.3)
+    soundtrack.setVolume(0.3);
+
 }
 
 

@@ -31,6 +31,7 @@ class Obstacle {
         this.obstacleImageVortex = loadImage('../assets/vortex.gif')
         this.obstacleImageSunburst = loadImage('../assets/sunburst.gif')
         this.collision = loadSound('../assets/collision.wav')
+        this.collision.setVolume(0.3);
 
         
 
