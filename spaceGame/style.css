@@ -4,11 +4,10 @@ body {
     align-items: center;
   }
   
-  h1 {
+  h4 {
     font-weight: 600;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #C768C1;
-    text-decoration: underline;
 
   }
 

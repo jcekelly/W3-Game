@@ -16,10 +16,11 @@ VCR = loadFont('../assets/VCR_OSD_MONO_1.001.ttf')
 function setup (){
     createCanvas(800, 600);
     frameRate(60);
-    textFont(VCR);
-    textAlign(CENTER,CENTER);
-    textSize(35);
-    fill('#FF6C00');
+    background.setup();
+    // textFont(VCR);
+    // textAlign(CENTER,CENTER);
+    // textSize(35);
+    // fill('#FF6C00');
 }
 
 function draw (){
@@ -69,7 +70,8 @@ function gameOver(){
     if (keyCode === 13){
         location.reload();
     }
-    player.controls = false 
+    player.controls = false
+    obstacle.movement = false 
 
     }
 

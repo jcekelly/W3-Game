@@ -21,6 +21,7 @@ class Obstacle {
         this.phantomSpeed = -3
         this.vortexSpeed = -3
         this.sunburstSpeed = -3
+        this.movement = true
     }
 
     preload(){
@@ -38,7 +39,8 @@ class Obstacle {
         image(this.obstacleImageVortex,this.vortexX,this.vortexY,this.widthPlus,this.heightPlus)
         image(this.obstacleImageSunburst,this.sunburstX,this.sunburstY,this.widthPlus,this.heightPlus)
 
-       
+       if (this.movement = true){
+           
         
         if (this.nebulaY < 5){
             this.nebulaSpeed = random(3,10);
@@ -77,6 +79,8 @@ class Obstacle {
         this.phantomY = this.phantomY + this.phantomSpeed
         this.vortexY = this.vortexY + this.vortexSpeed
         this.sunburstY = this.sunburstY + this.sunburstSpeed
+
+    }
 
 
        if(dist(this.nebulaX,this.nebulaY,player.x,player.y) < 40){

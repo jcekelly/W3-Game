@@ -6,6 +6,8 @@ class Player {
         this.controls = true
     }
 
+
+
     preload (){
         this.playerImage = loadImage('../assets/surt6.png')
     }
@@ -35,6 +37,10 @@ class Player {
           let remainingLives = document.getElementById('losses').value
           if(remainingLives <= '0'){
               gameOver();
+          }
+
+          if (this.x === 0){
+              background.displayControls();
           }
           
     }
